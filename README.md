@@ -1,90 +1,74 @@
-🚦 ESP32-CAM Traffic Signal Detection (Serial Output to Arduino)
+🚦 ESP32-CAM Traffic Signal Detection (RED / GREEN Output to Arduino)
 
-This project uses an ESP32-CAM to automatically detect RED and GREEN traffic lights using image processing techniques.
-Based on detection, the ESP32-CAM sends serial commands to an Arduino, which then controls a robot (stop / go).
+This project uses an ESP32-CAM (OV2640) to detect RED and GREEN traffic lights.
+Based on the detected color, the ESP32-CAM sends a serial message to an Arduino, which controls the robot’s movement (Stop / Go).
 
-Perfect for autonomous car, lane follower, and IRoC-U projects.
+This repository contains one single .ino file with the complete detection + serial output logic.
 
-📌 Overview
+🔥 Highlights
 
-ESP32-CAM captures camera frames
+Real-time traffic light color detection
 
-Detects red or green colors (or uses your ML logic)
+Outputs "RED" or "GREEN" over Serial
 
-Sends:
+Arduino receives the signal and controls the robot
 
-"RED" → Arduino stops the robot
+Lightweight algorithm suitable for ESP32-CAM
 
-"GREEN" → Arduino moves/continues
-
-Very lightweight and works with any Arduino robot setup.
-
-This repository contains one single .ino file with the complete implementation.
+Ideal for lane-following & autonomous bots
 
 🛠️ Hardware Used
 
-ESP32-CAM (OV2640)
+ESP32-CAM (AI Thinker)
 
-FTDI programmer (to upload code)
+FTDI Programmer
 
-Arduino UNO / Mega (optional, used for motor control)
+Arduino UNO / Mega
 
-Motor driver (L298N / TB6612FNG)
+Motor Driver (L298N / TB6612)
 
-Robot chassis with motors
+Robot Chassis + Motors
 
-Jumper wires
+5V Power Source
 
-🔌 Wiring (ESP32-CAM → Arduino)
+🔌 Connections (ESP32-CAM → Arduino)
 ESP32-CAM	Arduino
-TX	RX (Pin 0 or SoftwareSerial RX)
+TX	RX
 GND	GND
 5V	5V
 
-Baud Rate: 9600 (keep this same in both codes)
+Baud Rate: 9600
 
-▶️ Running the Project
+▶️ How to Run
 
-Open yourfile.ino in Arduino IDE
+Open the .ino file in Arduino IDE
 
-Select: AI Thinker ESP32-CAM board
+Select board: AI Thinker ESP32-CAM
 
-Connect FTDI → ESP32-CAM
+Connect FTDI and upload
 
-Upload the code
+Power the ESP32-CAM
 
-Open Serial Monitor (optional)
+Show RED/GREEN traffic signal images
 
-Place printed/LED traffic signals in front of the camera
+ESP32-CAM prints and sends:
 
-ESP32-CAM will output "RED" or "GREEN"
+"RED"
 
-Arduino reads the serial input and acts accordingly
+"GREEN"
 
-🎯 Features
+📁 Project File
+ESP32_CAM_Traffic_Signal.ino
 
-Real-time detection
+🚀 Future Add-Ons
 
-Low latency
+Yellow signal detection
 
-Fully edge-processed (no PC required)
+WiFi streaming with overlays
 
-Compatible with ANY Arduino robot
+YOLO-based detection
 
-Extremely simple integration
-
-🧩 File Included
-yourfile.ino      # Main code (ESP32-CAM detection + serial output)
-
-🧠 Future Enhancements
-
-Add Yellow signal detection
-
-YOLO-based traffic-light detection for higher accuracy
-
-Add WiFi streaming page with overlay
-
-Add obstacle detection + lane following fusion
+Multi-signal intersection support
 
 📜 License
 
