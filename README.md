@@ -19,7 +19,7 @@
 - 📡 Sends `"RED"` or `"GREEN"` to Arduino using Serial @ 9600 baud  
 - 🤖 Perfect for **autonomous cars**, **lane followers**, **IRoC-U bots**  
 - ⚡ Optimized for ESP32-CAM (OV2640) with fast color segmentation  
-- 🔌 Easy integration with any Arduino motor driver  
+- 🔌 Easy integration with  Arduino motor driver  
 
 ---
 
