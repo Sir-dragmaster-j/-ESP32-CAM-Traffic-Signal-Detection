@@ -71,7 +71,7 @@ ESP32-CAM-Traffic-Signal-Detection/
 - 🎨 Color segmentation detects RED / GREEN regions  
 - 🧠 Decision logic interprets the signal  
 - 📡 Serial output sent to Arduino  
-- 🚗 Arduino performs motor actions  
+- 🚗 Arduino performs motor actions according to the other instrucutions 
 
 ---
 
